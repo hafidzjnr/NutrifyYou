@@ -1,96 +1,140 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Future Calculator</title>
+  <title>NutrifyYou</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
   <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <div class="calculator-container">
-    <div class="card">
-      <div class="card-content">
-        <h2 class="card-title">Target</h2>
-        <p class="card-description">Tentukan target dan preferensi Anda</p>
-        
-        <div class="tab-menu">
-          <button class="tab-btn active" data-tab="berat">Target Berat</button>
-          <button class="tab-btn" data-tab="imt">Target IMT</button>
-        </div>
-        
-        <div class="tabs-container">
-          <div class="tab-content active" id="tab-berat">
-            <div class="form-field">
-              <label for="target_berat">Target Berat Badan (kg)</label>
-              <input type="text" id="target_berat" placeholder="Misal: 65">
-            </div>
-            
-            <div class="form-field">
-              <div class="slider-label-container">
-                <label for="laju">Laju Perubahan Berat (kg/minggu)</label>
-                <span id="nilaiLaju">0.5 kg</span>
-              </div>
-              <div class="slider-container">
-                <div class="slider-fill" id="slider-fill-weight" style="width: 21.05%;"></div>
-                <input type="range" id="laju" name="laju" min="0.1" max="2" step="0.1" value="0.5">
-              </div>
-              <p class="helper-text">Direkomendasikan 0.5 - 1 kg per minggu untuk perubahan yang sehat</p>
-            </div>
+  <!-- header -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="logo">
+        <i class="fa-solid fa-laptop-medical"></i>
+        <a href="#">
+          Nutrify<span class="logo-primary">You</span>
+        </a>
+      </div>
 
-            <div class="form-field">
-              <label for="preferensi_makanan">Preferensi Makanan</label>
-              <div class="select-container">
-                <select id="preferensi_makanan">
-                  <option value="omnivora">Omnivora (Semua makanan)</option>
-                  <option value="vegetarian">Vegetarian</option>
-                  <option value="vegan">Vegan</option>
-                  <option value="pescatarian">Pescatarian</option>
-                </select>
-                <div class="select-arrow"></div>
-              </div>
-            </div>
-
-            <button class="button-calculate">Hitung</button>
-          </div>
-          
-          <div class="tab-content" id="tab-imt">
-            <div class="form-field">
-              <label for="target_imt">Target IMT (kg/m²)</label>
-              <input type="text" id="target_imt" placeholder="Misal: 22.5">
-            </div>
-            
-            <div class="form-field">
-              <div class="slider-label-container">
-                <label for="laju_imt">Laju Perubahan Berat (kg/minggu)</label>
-                <span id="nilaiLajuIMT">0.5 kg</span>
-              </div>
-              <div class="slider-container">
-                <div class="slider-fill" id="slider-fill-imt" style="width: 21.05%;"></div>
-                <input type="range" id="laju_imt" name="laju_imt" min="0.1" max="2" step="0.1" value="0.5">
-              </div>
-              <p class="helper-text">Direkomendasikan 0.5 - 1 kg per minggu untuk perubahan yang sehat</p>
-            </div>
-
-            <div class="form-field">
-              <label for="preferensi_makanan_imt">Preferensi Makanan</label>
-              <div class="select-container">
-                <select id="preferensi_makanan_imt">
-                  <option value="omnivora">Omnivora (Semua makanan)</option>
-                  <option value="vegetarian">Vegetarian</option>
-                  <option value="vegan">Vegan</option>
-                  <option value="pescatarian">Pescatarian</option>
-                </select>
-                <div class="select-arrow"></div>
-              </div>
-            </div>
-
-            <button class="button-calculate">Hitung</button>
-          </div>
-        </div>
+      <div class="nav-links">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link">Calculate</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="#" class="nav-link">Contact</a> 
       </div>
     </div>
-  </div>
+  </nav>
 
-  <script src="js/about.js"></script>
+  <!-- main content -->
+  <main>
+    <section class="section">
+        <div class="card-header">About NutrifyYou</div>
+        <div class="card-body">
+          <p class="paragraf">NutrifyYou adalah aplikasi web inovatif yang dirancang untuk membantu Anda merencanakan dan memantau perjalanan menuju berat badan ideal secara mudah dan ilmiah.
+            Dengan memasukkan data pribadi seperti berat badan, tinggi badan, usia, jenis kelamin, dan tingkat aktivitas Anda akan langsung mendapatkan perhitungan IMT,
+            kategori status berat, serta estimasi waktu pencapaian target berdasarkan prinsip kalkulus.
+            Tidak hanya berhenti di situ, NutrifyYou juga menyajikan rekomendasi nutrisi harian dan jadwal latihan yang disesuaikan dengan kebutuhan Anda, 
+            plus grafik interaktif yang memvisualisasikan progres dari hari ke hari. Model perhitungan linear maupun eksponensial kami membantu merancang defisit 
+            kalori optimal untuk perubahan berat badan 0,5–1 kg per minggu, sehingga Anda tahu persis kapan target tercapai.
+            Proyek ini dikembangkan oleh tim kecil yang terdiri dari UI/UX Designer, Developer, dan Research Material. Visi kami adalah menyediakan alat ilmiah yang mudah diakses, 
+            agar setiap orang bisa mengatur pola makan dan olahraga dengan percaya diri. Misi kami : memadukan kalkulus, nutrisi, dan desain ramah pengguna untuk 
+            menjadikan perjalanan sehat Anda lebih terarah dan menyenangkan.
+          </p>
+        </div>
+
+        <div class="team-header">Development Team</div>
+        <div class="card-container">
+          <div class="team-row">
+            <div class="team-card">
+              <div class="card-content">
+                <div class="card-foto">
+                  <i class="bx bx-user"></i>
+                </div>
+                <div class="card-title">Hafidz Januar Faturahman<br>
+                  <span>Frontend Development</span>
+                </div>
+                <div class="sosial-icon">
+                  <i class='bx bxl-instagram'></i>
+                  <i class="bx bxl-whatsapp"></i>
+                  <i class="bx bxl-github"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="card-content">
+                <div class="card-foto">
+                  <i class="bx bx-user"></i>
+                </div>
+                <div class="card-title">Hafidz Januar Faturahman<br>
+                  <span>Frontend Development</span>
+                </div>
+                <div class="sosial-icon">
+                  <i class='bx bxl-instagram'></i>
+                  <i class="bx bxl-whatsapp"></i>
+                  <i class="bx bxl-github"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="card-content">
+                <div class="card-foto">
+                  <i class="bx bx-user"></i>
+                </div>
+                <div class="card-title">Hafidz Januar Faturahman<br>
+                  <span>Frontend Development</span>
+                </div>
+                <div class="sosial-icon">
+                  <i class='bx bxl-instagram'></i>
+                  <i class="bx bxl-whatsapp"></i>
+                  <i class="bx bxl-github"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-row">
+            <div class="team-card">
+              <div class="card-content">
+                <div class="card-foto">
+                  <i class="bx bx-user"></i>
+                </div>
+                <div class="card-title">Hafidz Januar Faturahman<br>
+                  <span>Frontend Development</span>
+                </div>
+                <div class="sosial-icon">
+                  <i class='bx bxl-instagram'></i>
+                  <i class="bx bxl-whatsapp"></i>
+                  <i class="bx bxl-github"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="card-content">
+                <div class="card-foto">
+                  <i class="bx bx-user"></i>
+                </div>
+                <div class="card-title">Hafidz Januar Faturahman<br>
+                  <span class="role">Frontend Development</span>
+                </div>
+                <div class="sosial-icon">
+                  <i class='bx bxl-instagram'></i>
+                  <i class="bx bxl-whatsapp"></i>
+                  <i class="bx bxl-github"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+  <!-- footer -->
+  
 </body>
 </html>

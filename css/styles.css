@@ -432,24 +432,6 @@ select {
   font-size: 0.9rem;
 }
 
-/* .weight-diff-container {
-  display: flex;
-  justify-content: space-between;
-  background-color: #f9e8ed;
-  padding: 15px 20px;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-.weight-diff-text {
-  color: #555;
-  font-size: 0.9rem;
-}
-
-.weight-diff-value {
-  font-weight: bold;
-  color: #444;
-} */
 
 .timeline-container {
   width: 100%;

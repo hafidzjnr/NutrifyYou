@@ -84,6 +84,27 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      // Hapus kelas 'active' dari semua tombol dan konten
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      // Tambahkan kelas 'active' ke tombol yang diklik
+      this.classList.add('active');
+
+      // Tampilkan konten tab yang sesuai
+      const tabId = this.getAttribute('data-tab');
+      document.getElementById(`tab-${tabId}`).classList.add('active');
+    });
+  });
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
   // Get the chart canvas element
   const ctx = document.getElementById('weightChart').getContext('2d');
@@ -270,3 +291,54 @@ const makananList = [
   { nama: 'Sayur Bayam', kalori: 23, protein: 2.9, karbohidrat: 3.6, lemak: 0.4 },
   { nama: 'Buah Apel', kalori: 52, protein: 0.3, karbohidrat: 14, lemak: 0.2 },
 ];
+
+const aktivitasList = {
+  Tidak: [
+    "Berjalan santai selama 15 menit",
+    "Peregangan ringan di pagi hari",
+    "Meditasi selama 10 menit"
+  ],
+  Sedikit: [
+    "Jogging ringan selama 20 menit",
+    "Yoga selama 30 menit",
+    "Bersepeda santai selama 15 menit"
+  ],
+  Cukup: [
+    "Kardio: 30-45 menit, 3-5 kali seminggu (jogging, bersepeda, berenang)",
+    "HIIT: 20-30 menit, 2-3 kali seminggu",
+    "Jalan kaki minimal 7.000-10.000 langkah setiap hari"
+  ],
+  Sangat: [
+    "Kardio: 45 menit, 5 kali seminggu",
+    "HIIT: 30 menit, 3 kali seminggu",
+    "Angkat beban: 2-3 kali seminggu, fokus pada latihan seluruh tubuh",
+    "Jalan kaki minimal 10.000 langkah setiap hari"
+  ],
+  Ekstra: [
+    "Kardio intensitas tinggi selama 1 jam, 6 kali seminggu",
+    "HIIT: 30 menit, 4 kali seminggu",
+    "Angkat beban: 3-4 kali seminggu, fokus pada latihan seluruh tubuh",
+    "Jalan kaki minimal 12.000 langkah setiap hari"
+  ]
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+  const preferensiAktivitas = document.getElementById('preferensi_makanan');
+  const aktivitasListElement = document.getElementById('aktivitas-list');
+
+  function updateAktivitas() {
+    const tingkatAktivitas = preferensiAktivitas.value;
+    const aktivitas = aktivitasList[tingkatAktivitas] || [];
+
+    aktivitasListElement.innerHTML = '';
+
+    aktivitas.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      aktivitasListElement.appendChild(li);
+    });
+  }
+
+  preferensiAktivitas.addEventListener('change', updateAktivitas);
+  updateAktivitas();
+});

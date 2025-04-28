@@ -645,3 +645,7 @@ select {
   color: #666;
   text-align: center;
 }
+
+#aktivitas-list {
+  display: block; /* Pastikan elemen terlihat */
+}

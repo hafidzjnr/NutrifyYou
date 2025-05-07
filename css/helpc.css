@@ -94,11 +94,29 @@ html {
   margin-top: 8rem;
 }
 
-.card-header{
-  font-size: 1.5rem;
+
+
+.help-header {
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 10px;
   text-align: center;
+}
+
+.sub-header {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  text-align: left;
+  margin-left: 270px;
+}
+
+.intro{
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.5;
+  margin-left: 270px;
+  margin-right: 270px;
 }
 
 .paragraf{
@@ -106,98 +124,53 @@ html {
   font-weight: 470;
   line-height: 1.5;
   margin-bottom: 0;
-  text-align: center;
-  margin-left: 100px;
-  margin-right: 100px;
-
+  width: 100%;
 }
 
-.team-header{
+.help-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  margin: 4rem auto;
+  max-width: 1400px;
+  padding: 0 2rem;
+}
+
+.help-content:last-of-type {
+  grid-template-columns: 1fr;
+  max-width: 700px;
+  margin-bottom: 4rem; 
+}
+
+.help-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  height: 300px;
+  transition: transform 0.3s ease;
+}
+
+
+.help-content:last-of-type .help-card {
+  margin-bottom: 6rem; 
+}
+
+.help-card:hover {
+  transform: translateY(-5px);
+}
+
+.judul {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
   text-align: center;
-  margin-top: 2rem;
 }
 
-.card-container{
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-
-.team-row{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 3rem;
-}
-
-.team-card{
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  width: 300px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-  margin-right: 3rem;
-  margin-bottom: 20px;
-}
-
-.card-content{
-  padding: 1rem;
+.Petunjuk{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 5rem;
   text-align: center;
-}
-
-.card-title{
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.role{
-  font-size: 15px;
-  color: #000000;
-  font-weight: 400;
-}
-
-.card-foto {
-  transition: transform 0.3s ease;
-}
-
-.card-foto:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow:rgba(0, 0, 0, 0.2);
-}
-
-.card-foto img {
-  width: 200px; 
-  height: 200px; 
-  border-radius: 50%;
-  object-fit: cover; 
-}
-
-.sosial-icon{
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  cursor: pointer;
-}
-
-.sosial-icon i {
-  font-size: 24px; 
-  color: #666; 
-  transition: transform 0.3s ease, color 0.3s ease; 
-}
-
-.sosial-icon i:hover {
-  transform: scale(1.2); 
-  color: #0099cc; 
 }

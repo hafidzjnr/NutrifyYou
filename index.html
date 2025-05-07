@@ -25,7 +25,8 @@
         <a href="home.html" class="nav-link">Home</a>
         <a href="index.html" class="nav-link">Calculate</a>
         <a href="about.html" class="nav-link">About</a>
-        <a href="#" class="nav-link">Contact</a> 
+        <a href="contact.html" class="nav-link">Contact</a> 
+        <a href="helpCenter.html" class="nav-link">Help Center</a>
       </div>
     </div>
   </nav>
@@ -42,115 +43,115 @@
         </p>
       </div>
       <div class="card-wrapper">
-      <div class="card">
-      <h2>
-        <i class="fas fa-user"></i>
-        Data Diri
-      </h2>
-      <p class="paragraf">Masukan Data Diri Anda Untuk Perhitungan Yang Akurat</p>
+        <div class="card">
+        <h2>
+          <i class="fas fa-user"></i>
+          Data Diri
+        </h2>
+        <p class="paragraf">Masukan Data Diri Anda Untuk Perhitungan Yang Akurat</p>
 
-      <form id="imt-form">
-        <div class="input-group">
-          <!-- Weight -->
-          <div class="weight-container">
-            <label for="weight">Berat Badan (kg): </label>
-            <div class="ui left icon input">
-              <input type="number" id="weight" placeholder="Misal : 70" required>
-              <i class="weight icon"></i>
-            </div>
-          </div>
-        
-          <!-- Height -->
-          <div class="height-container">
-            <label for="height">Tinggi Badan (cm): </label>
-            <div class="ui left icon input">
-              <input type="number" id="height" placeholder="Misal : 170" required>
-              <i class="arrows alternate vertical icon"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- Usia -->
-        <div class="input-group2">
-          <label for="age">Usia (Tahun): </label>
-          <div class="input-with-gender">
-            <div class="input">
+        <form id="imt-form">
+          <div class="input-group">
+            <!-- Weight -->
+            <div class="weight-container">
+              <label for="weight">Berat Badan (kg): </label>
               <div class="ui left icon input">
-                <input type="number" id="age" placeholder="Misal : 20" required>
-                <i class="user icon"></i>
+                <input type="number" id="weight" placeholder="Misal : 70" required>
+                <i class="weight icon"></i>
               </div>
             </div>
-
-            <!-- jenis kelamin -->
-            <div class="gender-container">
-              <label class="gender-option">
-                <input type="radio" name="jenis_kelamin" value="Pria" checked> Pria
-              </label>
-              <label class="gender-option">
-                <input type="radio" name="jenis_kelamin" value="Wanita"> Wanita
-              </label>
+          
+            <!-- Height -->
+            <div class="height-container">
+              <label for="height">Tinggi Badan (cm): </label>
+              <div class="ui left icon input">
+                <input type="number" id="height" placeholder="Misal : 170" required>
+                <i class="arrows alternate vertical icon"></i>
+              </div>
             </div>
           </div>
-        </div>
-        
-        <!-- Aktivitas -->
-        <div class="form-field">
-          <label for="preferensi_makanan">Pilih Tingkat Aktivitas</label>
-          <div class="select-container">
-            <select id="preferensi_makanan">
-              <option value="Tidak">Tidak Aktif (Aktivitas MInimal)</option>
-              <option value="Sedikit">Sedikit Aktif (Olahraga 1-3kali/minggu)</option>
-              <option value="Cukup">Cukup Aktif (Olahraga 3-5kali/minggu)</option>
-              <option value="Sangat">Sangat Aktif (Olahraga 6-7kali/minggu)</option>
-              <option value="Ekstra">Ekstra Aktif(Olahraga Berat ,Pekerjaan Fisik)</option>
-            </select>
-            <div class="select-arrow"></div>
+
+          <!-- Usia -->
+          <div class="input-group2">
+            <label for="age">Usia (Tahun): </label>
+            <div class="input-with-gender">
+              <div class="input">
+                <div class="ui left icon input">
+                  <input type="number" id="age" placeholder="Misal : 20" required>
+                  <i class="user icon"></i>
+                </div>
+              </div>
+
+              <!-- jenis kelamin -->
+              <div class="gender-container">
+                <label class="gender-option">
+                  <input type="radio" name="jenis_kelamin" value="Pria" checked> Pria
+                </label>
+                <label class="gender-option">
+                  <input type="radio" name="jenis_kelamin" value="Wanita"> Wanita
+                </label>
+              </div>
+            </div>
           </div>
+          
+          <!-- Aktivitas -->
+          <div class="form-field">
+            <label for="preferensi_makanan">Pilih Tingkat Aktivitas</label>
+            <div class="select-container">
+              <select id="preferensi_makanan">
+                <option value="Tidak">Tidak Aktif (Aktivitas MInimal)</option>
+                <option value="Sedikit">Sedikit Aktif (Olahraga 1-3kali/minggu)</option>
+                <option value="Cukup">Cukup Aktif (Olahraga 3-5kali/minggu)</option>
+                <option value="Sangat">Sangat Aktif (Olahraga 6-7kali/minggu)</option>
+                <option value="Ekstra">Ekstra Aktif(Olahraga Berat ,Pekerjaan Fisik)</option>
+              </select>
+              <div class="select-arrow"></div>
+            </div>
+          </div>
+        </form>
         </div>
-      </form>
+
+      <!-- hasil perhitungan -->
+      <div class="card">
+      <h2 >
+        <i class="calculator icon"></i>
+        Hasil Perhitungan
+      </h2>
+
+      <div class="result">
+        <div class="result-column">
+          <div class="result-label">IMT Saat Ini</div>
+          <div class="result-value current-imt">-</div>
+          <div class="result-desc">-</div>
+        </div>  
+
+          <div class="result-column">
+            <div class="result-label">IMT Target</div>
+            <div class="result-value target-imt">-</div>
+            <div class="result-desc">-</div>  
+        </div>
       </div>
 
-    <!-- hasil perhitungan -->
-    <div class="card">
-    <h2 >
-      <i class="calculator icon"></i>
-      Hasil Perhitungan
-    </h2>
-
-    <div class="result">
-      <div class="result-column">
-        <div class="result-label">IMT Saat Ini</div>
-        <div class="result-value current-imt">-</div>
-        <div class="result-desc">-</div>
-      </div>  
+      <div class="result">
+        <div class="result-column">
+          <div class="result-label">Berat Badan Saat Ini</div>
+          <div class="result-value current-weight">-kg</div>
+        </div>
 
         <div class="result-column">
-          <div class="result-label">IMT Target</div>
-          <div class="result-value target-imt">-</div>
-          <div class="result-desc">-</div>  
-      </div>
-    </div>
-
-    <div class="result">
-      <div class="result-column">
-        <div class="result-label">Berat Badan Saat Ini</div>
-        <div class="result-value current-weight">-kg</div>
+          <div class="result-label">Target Berat Badan</div>
+          <div class="result-value target-weight">-kg</div>
+        </div>
       </div>
 
-      <div class="result-column">
-        <div class="result-label">Target Berat Badan</div>
-        <div class="result-value target-weight">-kg</div>
+      <div class="state-container">
+        <div class="text-state">-Belum Ada Target</div>
       </div>
-    </div>
-
-    <div class="state-container">
-      <div class="text-state">-Belum Ada Target</div>
     </div>
   </div>
-      </div>
 
       <!-- target IMT -->
-       <div class="card-wrapper">
+    <div class="card-wrapper">
       <div class="card">
         <h2 class="card-title">
           <i class="weight icon"></i>
@@ -325,7 +326,7 @@
       </div>
 
       <h3>Rekomendasi Makanan Harian</h3>
-      <div class="makanan-harian">
+      <div class="makanan-harian active">
         <div class="makanan" id="sarapan">
           <h3>Sarapan</h3>
           <ul></ul>
@@ -346,11 +347,16 @@
       </div>
     </div>
 
-    <div class="tab-content" id="tab-aktivitas">
-      <h3>Rekomendasi Aktivitas Harian</h3>
-      <ul id="aktivitas-list"></ul>
+  <div class="aktivitas-harian">
+    <h3>Rekomendasi Aktivitas Harian</h3>
+    <div class="aktivitas">
+      <div class="tab-content" id="tab-aktivitas">
+        <ul id="aktivitas-list"></ul>
+      </div>
     </div>
   </div>
+
+
   </section>
   </main>
   <!-- footer -->

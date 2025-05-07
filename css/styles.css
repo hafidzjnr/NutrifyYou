@@ -30,7 +30,8 @@ html {
   right: 0;
   z-index: 1000;
   padding: 1rem 0;
-  background-color: transparent;
+  background-color: blur(white, 0.8);
+  backdrop-filter: blur(10px);
   transition: all 0.4s ease;
 }
 
@@ -135,22 +136,22 @@ html {
 }
 
 .card-wrapper {
-  display: flex; /* Mengatur card-card dalam satu baris */
-  gap: 20px; /* Jarak antar card */
-  margin-bottom: 20px; /* Jarak antara card dan bagian bawah */
+  display: flex;
+  gap: 50px;
+  margin-bottom: 20px;
   margin-top: 30px;
-  justify-content: space-between; /* Mengatur jarak antar card */
-  flex-wrap: wrap; /* Membuat card turun ke baris berikutnya jika layar kecil */
+  justify-content: space-between; 
+  flex-wrap: wrap;
 }
 
 .card {
-  flex: 1; /* Membuat card memiliki lebar yang sama */
-  max-width: 100%; /* Batas maksimum lebar card */
-  min-width: 300px; /* Batas minimum lebar card */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
-  border-radius: 10px; /* Membuat sudut card melengkung */
-  padding: 20px; /* Tambahkan padding di dalam card */
-  background-color: #fff; /* Warna latar belakang card */
+  flex: 1;
+  max-width: 100%; 
+  min-width: 500px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
+  padding: 20px; 
+  background-color: #fff; 
 }
 
 .card:hover{
@@ -202,7 +203,7 @@ html {
   font-weight: 600;
 }
 
-/* Tab content */
+
 .tabs-container {
   min-height: 300px;
   position: relative;
@@ -216,7 +217,6 @@ html {
   display: block;
 }
 
-/* Form fields */
 .form-field {
   margin-bottom: 20px;
 }
@@ -241,7 +241,6 @@ input[type="text"]::placeholder {
   color: #aaa;
 }
 
-/* Range slider styling */
 .slider-label-container {
   display: flex;
   justify-content: space-between;
@@ -310,7 +309,7 @@ input[type="range"]::-moz-range-thumb {
   margin-top: 8px;
 }
 
-/* Select dropdown */
+
 .select-container {
   position: relative;
 }
@@ -340,7 +339,6 @@ select {
   transform: translateY(-50%) rotate(-45deg);
 }
 
-/* Button */
 .button-calculate {
   width: 100%;
   background-color: #9bd0fc;
@@ -623,11 +621,30 @@ select {
 }
 
 .note{
+  font-style: italic;
   font-size: 0.9rem;
   color: #666;
   text-align: center;
 }
 
-#aktivitas-list {
-  display: block; /* Pastikan elemen terlihat */
+.aktivitas-harian {
+  display: none;
 }
+
+.aktivitas-harian.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+#aktivitas-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#aktivitas-list li {
+  margin-bottom: 12px;
+  padding: 8px;
+  background-color: #f0f4f9;
+  border-radius: 8px;
+}
+

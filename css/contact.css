@@ -8,7 +8,6 @@ body{
   font-family: 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   background: linear-gradient(90deg, #c2e0f8 0%, #ffffff 100%);
-
 }
 
 html {
@@ -40,7 +39,6 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-
 
 .logo {
   margin-top: 20px;
@@ -94,110 +92,112 @@ html {
   margin-top: 8rem;
 }
 
-.card-header{
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.paragraf{
+.paragraf {
   font-size: 1.25rem;
-  font-weight: 470;
-  line-height: 1.5;
-  margin-bottom: 0;
-  text-align: center;
+  line-height: 1.6;
   margin-left: 100px;
-  margin-right: 100px;
-
 }
 
-.team-header{
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.card-container{
-  width: 100%;
-  max-width: 1200px;
+.help-container {
+  max-width: 1600px;
   margin: 0 auto;
-  margin-bottom: 20px;
+  padding: 2rem;
 }
 
-.team-row{
+.help-header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.help-content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
-.team-card{
-  background-color: #fff;
+.help-card {
+  background: linear-gradient(135deg, #ffffff 0%, #c2e0f8 100%);
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  width: 300px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-  margin-right: 3rem;
-  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  transition: transform 0.3s ease;
 }
 
-.card-content{
-  padding: 1rem;
+.help-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.judul {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.card-title{
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #333;
+.sub-header {
+  margin-left: 350px;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
-.role{
-  font-size: 15px;
-  color: #000000;
+.intro {
+  margin-left: 250px;
+  margin-right: 350px;
+  font-size: 1.25rem;
   font-weight: 400;
+  margin-bottom: 2rem;
 }
 
-.card-foto {
-  transition: transform 0.3s ease;
+/* Form styling */
+.field {
+  margin-bottom: 1.5rem;
 }
 
-.card-foto:hover {
-  transform: scale(1.05);
+.field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #9bd0fc;
+  box-shadow: 0 0 0 3px rgba(155, 208, 252, 0.2);
+}
+
+.ui.button {
+  background-color: #9bd0fc;
+  color: #2d3748;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow:rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
 }
 
-.card-foto img {
-  width: 200px; 
-  height: 200px; 
-  border-radius: 50%;
-  object-fit: cover; 
-}
-
-.sosial-icon{
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  cursor: pointer;
-}
-
-.sosial-icon i {
-  font-size: 24px; 
-  color: #666; 
-  transition: transform 0.3s ease, color 0.3s ease; 
-}
-
-.sosial-icon i:hover {
-  transform: scale(1.2); 
-  color: #0099cc; 
+.ui.button:hover {
+  background-color: #7cb9f8;
+  transform: translateY(-2px);
 }

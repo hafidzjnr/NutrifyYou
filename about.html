@@ -9,9 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+  <!-- particles.js container -->
+  <div id="particles-js"></div>
+
   <!-- header -->
   <nav id="navbar">
     <div class="container">
@@ -21,6 +24,13 @@
           Nutrify<span class="logo-primary">You</span>
         </a>
       </div>
+
+      <!-- Hamburger menu for mobile -->
+      <button class="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
       <div class="nav-links">
         <a href="home.html" class="nav-link">Home</a>
@@ -61,9 +71,9 @@
                   <span class="role">UI/UX Designer</span>
                 </div>
                 <div class="sosial-icon">
-                  <i class='bx bxl-instagram'></i>
-                  <i class="bx bxl-whatsapp"></i>
-                  <i class="bx bxl-github"></i>
+                  <a href="https://www.instagram.com/mhmdnaufalsr_?igsh=dnExOHRja3UybnE0"><i class='bx bxl-instagram'></i></a>
+                  <a href="https://wa.me/+6288210379840"><i class="bx bxl-whatsapp"></i></a>
+                  <a href="https://github.com/naufalgacor?tab=overview&from=2025-04-01&to=2025-04-30"><i class="bx bxl-github"></i></a>
                 </div>
               </div>
             </div>
@@ -77,9 +87,9 @@
                   <span class="role">Frontend Developer</span>
                 </div>
                 <div class="sosial-icon">
-                  <a href=""><i class='bx bxl-instagram'></i></a>
-                  <a href=""><i class="bx bxl-whatsapp"></i></a>
-                  <a href=""><i class="bx bxl-github"></i></a>
+                  <a href="https://www.instagram.com/hfdjnr06_?igsh=MWxuaGp1ZjBsODdrZg=="><i class='bx bxl-instagram'></i></a>
+                  <a href="https://wa.me/+6285215453485"><i class="bx bxl-whatsapp"></i></a>
+                  <a href="https://github.com/hafidzjnr"><i class="bx bxl-github"></i></a>
                 </div>
               </div>
             </div>
@@ -93,9 +103,9 @@
                   <span class="role">Backend Developer</span>
                 </div>
                 <div class="sosial-icon">
-                  <i class='bx bxl-instagram'></i>
-                  <i class="bx bxl-whatsapp"></i>
-                  <i class="bx bxl-github"></i>
+                  <a href="https://www.instagram.com/rendiren"><i class='bx bxl-instagram'></i></a>
+                  <a href="https://wa.me/+6282323780449"><i class="bx bxl-whatsapp"></i></a>
+                  <a href="https://github.com/rendiyogi1122"><i class="bx bxl-github"></i></a>
                 </div>
               </div>
             </div>
@@ -111,9 +121,9 @@
                   <span class="role">Backend Developer</span>
                 </div>
                 <div class="sosial-icon">
-                  <i class='bx bxl-instagram'></i>
-                  <i class="bx bxl-whatsapp"></i>
-                  <i class="bx bxl-github"></i>
+                  <a href="https://www.instagram.com/han.synn?igsh=MWhjZms2MmU0b2Z2eA=="><i class='bx bxl-instagram'></i></a>
+                  <a href="https://wa.me/+6289628091298"><i class="bx bxl-whatsapp"></i></a>
+                  <a href="https://github.com/RayhanHannn"><i class="bx bxl-github"></i></a>
                 </div>
               </div>
             </div>
@@ -127,9 +137,9 @@
                   <span class="role">Research Material</span>
                 </div>
                 <div class="sosial-icon">
-                  <i class='bx bxl-instagram'></i>
-                  <i class="bx bxl-whatsapp"></i>
-                  <i class="bx bxl-github"></i>
+                  <a href="https://www.instagram.com/gearhedgehog2005?igsh=MWF0Y3V3M2pvaWkzbA=="><i class='bx bxl-instagram'></i></a>
+                  <a href="https://wa.me/+6283898903332"><i class="bx bxl-whatsapp"></i></a>
+                  <a href=""><i class="bx bxl-github"></i></a>
                 </div>
               </div>
             </div>
@@ -137,7 +147,54 @@
         </div>
     </section>
   </main>
+
   <!-- footer -->
-  
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="logo footer-logo">
+          <i class="fa-solid fa-laptop-medical"></i>
+          <span>Nutrify<span class="logo-primary">You</span></span>
+        </div>
+        <p>Solusi pintar untuk menghitung dan mencapai target berat badan ideal Anda dengan saran nutrisi yang personal.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="index.html">Calculate</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="helpCenter.html">Help Center</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> info@nutrifyyou.com</li>
+          <li><i class="fas fa-phone"></i> +62 123 456 789</li>
+          <li><i class="fas fa-map-marker-alt"></i> Tasikmalaya, Indonesia</li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 NutrifyYou. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/about.js"></script>
 </body>
 </html>

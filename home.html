@@ -9,8 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+  <!-- particles.js container -->
+  <div id="particles-js"></div>
+  
   <!-- header -->
   <nav id="navbar">
     <div class="container">
@@ -21,6 +25,13 @@
         </a>
       </div>
 
+      <!-- Hamburger menu for mobile -->
+      <button class="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-links">
         <a href="home.html" class="nav-link">Home</a>
         <a href="index.html" class="nav-link">Calculate</a>
@@ -30,6 +41,8 @@
       </div>
     </div>
   </nav>
+
+  
 
   <!-- main content -->
   <main>
@@ -44,7 +57,12 @@
         dan Grafik Progres untuk Hasil Nyata</strong>.</P>
         <p>Isi data diri dan tujuanmu, lalu dapatkan rencana kalori, 
           latihan, dan proyeksi pencapaian berat ideal.</p>
-        <a href="calculate.html" class="btn ">Get Started</a>
+          <div class="btn-group">
+            <a href="index.html" class="btn">Get Started</a>
+            <a href="helpCenter.html" class="btn-help">
+              <i class="fas fa-question"></i>
+            </a>
+          </div>
     </section>
   </main>
   

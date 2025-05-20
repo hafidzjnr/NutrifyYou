@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: linear-gradient(90deg, #c2e0f8 0%, #ffffff 100%);
+}
+
 body{
   font-family: 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
@@ -86,11 +96,49 @@ html {
   color: #9bd0fc;
 }
 
-.section{
-  margin-left: 10px;
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1).active {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger span:nth-child(2).active {
+  opacity: 0;
+}
+
+.hamburger span:nth-child(3).active {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  margin-top: 100px;
+  margin-left: 100px;
   position: relative;
+  overflow: hidden;
   scroll-margin-top: 90px;
-  align-items: last baseline;
 }
 
 .container-main {
@@ -105,7 +153,7 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 8rem;
+  margin-top: 2rem;
 }
 
 .input-group {
@@ -216,6 +264,7 @@ html {
 .tab-content.active {
   display: block;
 }
+
 
 .form-field {
   margin-bottom: 20px;
@@ -565,51 +614,43 @@ select {
   text-align: center;
 }
 
-.karbo-label{
-  text-align: center;
-  font-size: 1rem;
-  margin-bottom: 5px;
+.karbo-label, .protein-label, .lemak-label {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 500;
 }
 
-.karbo-value{
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-.protein-label{
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-
-.protein-value{
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-.lemak-label{
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-
-.lemak-value{
-  font-size: 1.3rem;
-  font-weight: 700;
+.karbo-value, .protein-value, .lemak-value {
+  display: inline-block;
+  font-weight: bold;
+  min-width: 80px;
 }
 
 .progres-bar {
-  width: 100%; 
+  width: 100%;
   height: 10px;
-  background-color: #e0e0e0; 
-  border-radius: 5px; 
-  overflow: hidden; 
-  margin: 10px 0; 
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 5px;
 }
 
 .progres-fill {
-  height: 100%; 
-  background-color: #43b4ff; 
-  border-radius: 5px; 
-  transition: width 0.3s ease; 
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.distribusi-item:nth-child(1) .progres-fill {
+  background-color: #4CAF50; /* Hijau untuk karbohidrat */
+}
+
+.distribusi-item:nth-child(2) .progres-fill {
+  background-color: #2196F3; /* Biru untuk protein */
+}
+
+.distribusi-item:nth-child(3) .progres-fill {
+  background-color: #FFC107; /* Kuning untuk lemak */
 }
 
 .makanan{
@@ -619,6 +660,15 @@ select {
   padding: 15px 30px;
   width: 100%;
 }
+
+.aktivitas{
+  background-color: #faf0f0;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 15px 30px;
+  width: 100%;
+}
+
 
 .note{
   font-style: italic;
@@ -648,3 +698,356 @@ select {
   border-radius: 8px;
 }
 
+/* Footer Styles */
+.footer {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 60px 0 20px;
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.footer-section {
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-logo i {
+  margin-right: 10px;
+  font-size: 1.75rem;
+}
+
+.footer-section h3 {
+  color: #002950;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background: #9bd0fc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #002950;
+}
+
+.footer-section ul li i {
+  margin-right: 10px;
+  color: #002950;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #f5f5f5;
+  color: #002950;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #002950;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-bottom p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-logo {
+    justify-content: center;
+  }
+  
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* Responsive CSS for NutrifyYou */
+
+/* Base responsive styles */
+@media screen and (max-width: 1200px) {
+  .section {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  .card-wrapper {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .section {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .card {
+    min-width: 400px;
+  }
+  
+  .rencana-target {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .distribusi {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .distribusi-item {
+    padding: 10px 20px;
+  }
+  
+  .nav-links {
+    margin-right: 20px;
+  }
+}
+
+/* Tablet and mobile styles */
+@media screen and (max-width: 768px) {
+  /* Navigation */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s ease;
+    margin-top: 0;
+    margin-right: 0; 
+    z-index: 1000;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-link {
+    margin: 15px 0;
+    font-size: 1.2rem;
+  }
+  
+  .hamburger {
+    display: block;
+    margin-top: 20px;
+    z-index: 1000;
+  }
+  
+  /* Main Content */
+  .section {
+    margin-top: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+   .paragraf {
+    font-size: 1.1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+  }
+  
+  .card-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .card {
+    min-width: 100%;
+    width: 100%;
+  }
+  
+  /* Form layouts */
+  .input-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-with-gender {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .gender-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  /* Results section */
+  .result {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .result-column {
+    padding: 10px 0;
+  }
+  
+  /* Chart and timeline */
+  .chart-container {
+    height: 180px;
+  }
+  
+  .weight-info-container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .weight-info {
+    width: 80%;
+  }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+  
+  .logo i {
+    font-size: 1.4rem;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .tab-btn {
+    padding: 10px;
+    font-size: 12px;
+  }
+  
+  .form-field label {
+    font-size: 13px;
+  }
+  
+  .rencana-target {
+    padding: 10px 15px;
+  }
+  
+  .estimation-title {
+    font-size: 1rem;
+  }
+  
+  .estimation-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .weight-info {
+    width: 100%;
+    padding: 10px 15px;
+  }
+  
+  .weight-value, .ttde-value, .kalori-value, .harian-value {
+    font-size: 1.1rem;
+  }
+  
+  .result-value {
+    font-size: 1.5rem;
+  }
+  
+  .header h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .header p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .makanan, .aktivitas {
+    padding: 10px 15px;
+  }
+  
+  .makanan h3, .aktivitas h3 {
+    font-size: 1rem;
+  }
+}

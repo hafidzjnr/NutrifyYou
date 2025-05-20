@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NutrifyYou</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
-
 <body>
   <!-- particles.js container -->
   <div id="particles-js"></div>
-
-
+  
   <!-- header -->
   <nav id="navbar">
     <div class="container">
       <div class="logo">
         <i class="fa-solid fa-laptop-medical"></i>
-        <a href="home.html">
+        <a href="#">
           Nutrify<span class="logo-primary">You</span>
         </a>
       </div>
@@ -34,8 +33,8 @@
       </button>
 
       <div class="nav-links">
-        <a href="home.html" class="nav-link">Home</a>
-        <a href="index.html" class="nav-link">Calculate</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="calculate.html" class="nav-link">Calculate</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link">Contact</a> 
         <a href="helpCenter.html" class="nav-link">Help Center</a>
@@ -43,400 +42,30 @@
     </div>
   </nav>
 
-  <main class="container-main">
+  
+
+  <!-- main content -->
+  <main>
     <section class="section">
-      <div class="header">
-        <h2>
-          Selamat Datang di NutrifyYou Kalkulator!
-        </h2>
-        <p >
-          Mulai Perjalanan Sehatmu Sekarang!
-        </p>
+      <div class="chart-container">
+        <canvas id="donutChart"></canvas>
       </div>
-      <div class="card-wrapper">
-        <div class="card">
-        <h2>
-          <i class="fas fa-user"></i>
-          Data Diri
-        </h2>
-        <p class="paragraf">Masukan Data Diri Anda Untuk Perhitungan Yang Akurat</p>
-
-        <form id="imt-form">
-          <div class="input-group">
-            <!-- Weight -->
-            <div class="weight-container">
-              <label for="weight">Berat Badan (kg): </label>
-              <div class="ui left icon input">
-                <input type="number" id="weight" placeholder="Misal : 70" required>
-                <i class="weight icon"></i>
-              </div>
-            </div>
-          
-            <!-- Height -->
-            <div class="height-container">
-              <label for="height">Tinggi Badan (cm): </label>
-              <div class="ui left icon input">
-                <input type="number" id="height" placeholder="Misal : 170" required>
-                <i class="arrows alternate vertical icon"></i>
-              </div>
-            </div>
-          </div>
-
-          <!-- Usia -->
-          <div class="input-group2">
-            <label for="age">Usia (Tahun): </label>
-            <div class="input-with-gender">
-              <div class="input">
-                <div class="ui left icon input">
-                  <input type="number" id="age" placeholder="Misal : 20" required>
-                  <i class="user icon"></i>
-                </div>
-              </div>
-
-              <!-- jenis kelamin -->
-              <div class="gender-container">
-                <label class="gender-option">
-                  <input type="radio" name="jenis_kelamin" value="Pria" checked> Pria
-                </label>
-                <label class="gender-option">
-                  <input type="radio" name="jenis_kelamin" value="Wanita"> Wanita
-                </label>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Aktivitas -->
-          <div class="form-field">
-            <label for="preferensi_makanan">Pilih Tingkat Aktivitas</label>
-            <div class="select-container">
-              <select id="preferensi_makanan">
-                <option value="Tidak">Tidak Aktif (Aktivitas MInimal)</option>
-                <option value="Sedikit">Sedikit Aktif (Olahraga 1-3kali/minggu)</option>
-                <option value="Cukup">Cukup Aktif (Olahraga 3-5kali/minggu)</option>
-                <option value="Sangat">Sangat Aktif (Olahraga 6-7kali/minggu)</option>
-                <option value="Ekstra">Ekstra Aktif(Olahraga Berat ,Pekerjaan Fisik)</option>
-              </select>
-              <div class="select-arrow"></div>
-            </div>
-          </div>
-        </form>
-        </div>
-
-      <!-- hasil perhitungan -->
-      <div class="card">
-      <h2 >
-        <i class="calculator icon"></i>
-        Hasil Perhitungan
-      </h2>
-
-      <div class="result">
-        <div class="result-column">
-          <div class="result-label">IMT Saat Ini</div>
-          <div class="result-value current-imt">-</div>
-          <div class="result-desc">-</div>
-        </div>  
-
-          <div class="result-column">
-            <div class="result-label">IMT Target</div>
-            <div class="result-value target-imt">-</div>
-            <div class="result-desc">-</div>  
-        </div>
-      </div>
-
-      <div class="result">
-        <div class="result-column">
-          <div class="result-label">Berat Badan Saat Ini</div>
-          <div class="result-value current-weight">-kg</div>
-        </div>
-
-        <div class="result-column">
-          <div class="result-label">Target Berat Badan</div>
-          <div class="result-value target-weight">-kg</div>
-        </div>
-      </div>
-
-      <div class="state-container">
-        <div class="text-state">-Belum Ada Target</div>
-      </div>
-    </div>
-  </div>
-
-      <!-- target IMT -->
-    <div class="card-wrapper">
-      <div class="card">
-        <h2 class="card-title">
-          <i class="weight icon"></i>
-          Target</h2>
-        <p class="card-description">Tentukan target dan preferensi Anda</p>
-        
-        <div class="tab-menu">
-          <button class="tab-btn active" data-tab="berat">Target Berat</button>
-          <button class="tab-btn" data-tab="imt">Target IMT</button>
-        </div>
-        
-        <div class="tabs-container">
-          <div class="tab-content active" id="tab-berat">
-            <div class="form-field">
-              <label for="target_berat">Target Berat Badan (kg)</label>
-              <div class="ui left icon input">
-              <input type="text" id="target_berat" placeholder="Misal: 65">
-                <i class="weight icon"></i>
-              </div>
-            </div>
-            
-            <div class="form-field">
-              <div class="slider-label-container">
-                <label for="laju">Laju Perubahan Berat (kg/minggu)</label>
-                <span id="nilaiLaju">0.5 kg</span>
-              </div>
-              <div class="slider-container">
-                <div class="slider-fill" id="slider-fill-weight" style="width: 21.05%;"></div>
-                <input type="range" id="laju" name="laju" min="0.1" max="2" step="0.1" value="0.5">
-              </div>
-              <p class="helper-text">Direkomendasikan 0.5 - 1 kg per minggu untuk perubahan yang sehat</p>
-            </div>
-
-            <div class="form-field">
-              <label for="preferensi_makanan">Preferensi Makanan</label>
-              <div class="select-container">
-                <select id="preferensi_makanan">
-                  <option value="omnivora">Omnivora (Semua makanan)</option>
-                  <option value="vegetarian">Vegetarian</option>
-                  <option value="vegan">Vegan</option>
-                  <option value="pescatarian">Pescatarian</option>
-                </select>
-                <div class="select-arrow"></div>
-              </div>
-            </div>
-
-            <button class="button-calculate">Hitung</button>
-          </div>
-          
-          <div class="tab-content" id="tab-imt">
-            <div class="form-field">
-              <label for="target_imt">Target IMT (kg/m²)</label>
-              <div class="ui left icon input">
-              <input type="text" id="target_imt" placeholder="Misal: 22.5">
-              <i class="weight icon"></i>
-              </div>
-            </div>
-            
-            <div class="form-field">
-              <div class="slider-label-container">
-                <label for="laju_imt">Laju Perubahan Berat (kg/minggu)</label>
-                <span id="nilaiLajuIMT">0.5 kg</span>
-              </div>
-              <div class="slider-container">
-                <div class="slider-fill" id="slider-fill-imt" style="width: 21.05%;"></div>
-                <input type="range" id="laju_imt" name="laju_imt" min="0.1" max="2" step="0.1" value="0.5">
-              </div>
-              <p class="helper-text">Direkomendasikan 0.5 - 1 kg per minggu untuk perubahan yang sehat</p>
-            </div>
-
-            <div class="form-field">
-              <label for="preferensi_makanan_imt">Preferensi Makanan</label>
-              <div class="select-container">
-                <select id="preferensi_makanan_imt">
-                  <option value="omnivora">Omnivora (Semua makanan)</option>
-                  <option value="vegetarian">Vegetarian</option>
-                  <option value="vegan">Vegan</option>
-                  <option value="pescatarian">Pescatarian</option>
-                </select>
-                <div class="select-arrow"></div>
-              </div>
-            </div>
-            <button class="button-calculate">Hitung</button>
-          </div>
-        </div>
-      </div>
-
-  <!-- grafik timeline perubahan berat -->
-  <div class="card">
-        <h2>
-        <i class="fas fa-chart-line"></i>
-        Timeline Perubahan Berat
-        </h2>
-        
-        <div class="estimation-info">
-            <h3 class="estimation-title">Estimasi waktu : 11 minggu</h3>
-            <p class="estimation-subtitle">Dengan laju 0.5 kg per minggu</p>
-        </div>
-        
-        <div class="chart-container">
-            <canvas id="weightChart"></canvas>
-        </div>
-        
-        <div class="weight-info-container">
-            <div class="weight-info start">
-                <div class="weight-label">Mulai</div>
-                <div class="weight-value">70.0 kg</div>
-            </div>
-            <div class="weight-info target">
-                <div class="weight-label">Target</div>
-                <div class="weight-value">65.0 kg</div>
-            </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>
-      Rencana Nutrisi & Aktivitas
-    </h2>
-    <p>Rekomendasi nutrisi dan aktivitas untuk mencapai target anda</p>
-    <div class="rencana">
-      <div class="rencana-target">
-        <div class="container-rekomendasi">
-          <div class="ttde-label">TTDE</div>
-          <div class="ttde-value">-</div>
-          <div class="ttde-label">Pengeluaran energi harian</div>
-        </div>
-        <div class="container-rekomendasi">
-          <div class="kalori-label">Target Kalori</div>
-          <div class="kalori-value">-</div>
-          <div class="kalori-label">Defisit</div>
-        </div>
-        <div class="container-rekomendasi">
-          <div class="harian-label">Penyesuaian</div>
-          <div class="harian-value">-</div>
-          <div class="harian-label">Pengurangan kalori harian</div>
-        </div>
-      </div>
-
-<h3>Distribusi Makronutrisi</h3>
-      <div class="distribusi">
-          <div class="distribusi-item">
-            <div class="nutrisi-info">
-              <div class="nutrisi-label">Karbohidrat</div>
-              <div class="nutrisi-value karbo-value">- g</div>
-              <div class="nutrisi-percentage karbo-percentage">-</div>
-            </div>
-            <div class="progres-bar">
-              <div class="progres-fill karbo-fill" style="width: 0%; background-color: #4CAF50;"></div>
-            </div>
-          </div>
-          <div class="distribusi-item">
-            <div class="nutrisi-info">
-              <div class="nutrisi-label">Protein</div>
-              <div class="nutrisi-value protein-value">- g</div>
-              <div class="nutrisi-percentage protein-percentage">-</div>
-            </div>
-            <div class="progres-bar">
-              <div class="progres-fill protein-fill" style="width: 0%; background-color: #2196F3;"></div>
-            </div>
-          </div>
-          <div class="distribusi-item">
-            <div class="nutrisi-info">
-              <div class="nutrisi-label">Lemak</div>
-              <div class="nutrisi-value lemak-value">- g</div>
-              <div class="nutrisi-percentage lemak-percentage">-</div>
-            </div>
-            <div class="progres-bar">
-              <div class="progres-fill lemak-fill" style="width: 0%; background-color: #FF9800;"></div>
-            </div>
-          </div>
-      </div>
-
-      <div class="rencana">
-        <div class="tab-menu">
-          <button class="tab-btn active" data-tab="makanan">Rekomendasi Makanan</button>
-          <button class="tab-btn" data-tab="aktivitas">Rekomendasi aktivitas</button>
-        </div>
-
-        <div class="tabs-container">
-          <!-- makanan -->
-           <div class="tab-content active" id="tab-makanan">
-            <div class="makanan" id="sarapan">
-              <h3>Sarapan</h3>
-              <ul></ul>
-            </div>
-            <div class="makanan" id="makan-siang">
-              <h3>Makan Siang</h3>
-              <ul></ul>
-            </div>
-            <div class="makanan" id="makan-malam">
-              <h3>Makan Malam</h3>
-              <ul></ul>
-            </div>
-            <div class="makanan" id="cemilan">
-              <h3>Cemilan</h3>
-              <ul></ul>
-            </div>
-           </div>
-
-           <!-- aktivitaas -->
-            <div class="tab-content" id="tab-aktivitas">
-              <div class="aktivitas" id="cardio">
-                <h3>Cardio</h3>
-                <ul></ul>
-              </div>
-              <div class="aktivitas" id="strength">
-                <h3>Strength</h3>
-                <ul></ul>
-              </div>
-              <div class="aktivitas" id="neat">
-                <h3>Neat</h3>
-                <ul></ul>
-              </div>
-              <div class="aktivitas" id="strecht">
-                <h3>Strecht & recovery</h3>
-                <ul></ul>
-              </div>
-            </div>
-        </div>
-      </div>
-  </section>
-  </main>
-  <!-- footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <div class="logo footer-logo">
-          <i class="fa-solid fa-laptop-medical"></i>
-          <span>Nutrify<span class="logo-primary">You</span></span>
-        </div>
-        <p>Solusi pintar untuk menghitung dan mencapai target berat badan ideal Anda dengan saran nutrisi yang personal.</p>
-      </div>
-      
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="index.html">Calculate</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="helpCenter.html">Help Center</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h3>Contact Info</h3>
-        <ul>
-          <li><i class="fas fa-envelope"></i> info@nutrifyyou.com</li>
-          <li><i class="fas fa-phone"></i> +62 123 456 789</li>
-          <li><i class="fas fa-map-marker-alt"></i> Tasikmalaya, Indonesia</li>
-        </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
-    </div>
     
-    <div class="footer-bottom">
-      <p>&copy; 2025 NutrifyYou. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-  <script src="js/script.js"></script>
+      <h3>Mulai Perjalanan Sehatmu:</h3>
+      <P class="paragraf"><strong>IMT Otomatis 
+        yang Memberi Target Berat, Rencana Kalori,
+        dan Grafik Progres untuk Hasil Nyata</strong>.</P>
+        <p>Isi data diri dan tujuanmu, lalu dapatkan rencana kalori, 
+          latihan, dan proyeksi pencapaian berat ideal.</p>
+          <div class="btn-group">
+            <a href="index.html" class="btn">Get Started</a>
+            <a href="helpCenter.html" class="btn-help">
+              <i class="fas fa-question"></i>
+            </a>
+          </div>
+    </section>
+  </main>
+  
+  <script src="js/home.js"></script>
 </body>
 </html>
